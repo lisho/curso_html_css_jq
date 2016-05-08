@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!-- 
+    ***************************************
+    * Trabajo realizado con Sumblime Text *
+    * por Lish@                           *
+    * desde mi Manjaro-Linux              *
+    ***************************************
+  -->
+
+<title>Calculadora Modificada con JQuery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="mi_css.css">
+<style type="text/css">
+
+* { user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    margin:0;
+    padding:0;
+}
+
+</style>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<!--
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+-->
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="mi_js.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+  <nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#miMenu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+        <a class="navbar-brand" href="index.html">MOOC</a>
+      </div>
+      <div class="collapse navbar-collapse" id="miMenu">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="puzzle.html">PUZZLE</a></li>
+          <li class="active"><a href="calculadora.html">CALCULADORA</a></li> 
+          <li><a href="#">Opción 4</a></li> 
+          <li><a href="#">Opción 5</a></li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="">
+    <div class="ejercicio calculadora">
+
+     <p>Número:</p>
+
+            <div><input type="" size="16" id="num"></div>
+            
+            <p></p>
+            <button id="btn1">+</button>
+            <button id="btn2">-</button>
+            <button id="btn3">*</button>
+            <button id="btn4">/</button>
+            <button id="btn5">x<sup>y</sup></button>
+            <p></p>
+            <button id="igual">=</button>
+            <p></p>
+            <button id="btn6">x<sup>2</sup></button>
+            <button id="btn10">2<sup>x</sup></button>
+            <button id="btn7">1/x</button>
+            <button id="btn8">√x</button>
+            <button id="btn9">Entero</button>
+            <button id="btn11">n!</button>
+            <p>Introduce varios números separados por comas para aplicar el sumatorio(Σ) y el producto(Π)</p>
+            <button id="btn12">Σ</button>
+            <button id="btn13">Π</button>
+            <p></p>
+
+      <div class="clear"> </div>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    <p>-- Luis González Gómez --</p>
+    <p>(c) 2016 - Lish@ - Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</p>
+  </div>
+
+</div>
+
+</body>
+</html>

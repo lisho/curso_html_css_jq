@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Herencia</title>
+<style type="text/css">
+
+/*Estilos de la tabla*/
+	
+	table{
+		display: table;		
+	}
+	
+	td{
+		padding: .5em;
+		border: 1px solid black;	    
+	}
+
+	.tabla{
+		width: 100%;
+	}
+
+/*Estilos de celdas de colores en la tabla*/
+
+#color1{
+	background-color: #F7FF11;
+}
+
+#color2{
+	background-color: cyan;
+}
+
+#color3{
+	background-color: #FB2DB9;
+}
+
+#color4{
+	background-color: #FBB82D;
+}	
+#color5{
+	background-color: #188800;
+}	
+	
+/*Estilos de H1 */
+	div header h1 {color: #F7FF11;}
+	#caja header h1 {color: cyan;}
+	div .cabecera h1{color:#FBB82D;}
+	h1{color: #FBB82D;}
+	h1{color: #188800;}
+
+</style>
+</head>
+<body>
+
+<div id="caja">
+
+<header class="cabecera">
+    <h1>Cabecera: header</h1>
+</header>
+</div>
+
+<div>
+    <table class="tabla"> 
+    	<thead>
+	    		<th>Selectores de estilos de h1</td>
+	    		<th>Color</td>
+	    		<th>Prioridad</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>div header h1 </td>
+				<td id="color1"></td>
+				<td>0.0.0.3</td>
+			</tr>
+			<tr>
+				<td>#caja header h1</td>
+				<td id="color2"></td>
+				<td>0.1.0.2</td>
+			</tr>
+			<tr>
+				<td>div .cabecera h1</td>
+				<td id="color3"></td>
+				<td>0.0.1.2</td>
+			</tr>
+			<tr>
+				<td>h1</td>
+				<td id="color4"></td>
+				<td>0.0.0.1</td>
+			</tr>
+			<tr>
+				<td>h1</td>
+				<td id="color5"></td>
+				<td>0.0.0.1</td>
+			</tr>
+		</tbody>
+    </table>
+
+<p>La mayor puntuación la obtiene la combinación de selectores: <strong>#caja header h1</strong>, por lo que el título aparece en color <strong style="color:cyan;">CYAN</strong> </p>
+
+</div>
+</body>
+</html>

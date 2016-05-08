@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio de página responsive multimedia</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+
+	/* Estilos básicos de la página */
+
+		header{
+			padding: 3em 0em;
+			text-align: center;
+			background-color: #2C3135;
+			color: #fff;
+		}
+
+		header h2{
+			color: #CCCCCC;
+		}
+
+		footer{
+			padding: 3em 0em;
+			text-align: center;
+			background-color: #2C3135;
+			color: #fff;
+		}
+		
+		section{
+			margin: 3em;
+			background-color: #C3C3C3;
+			padding: 1em;
+			box-shadow: 10px 10px 5px #888888;
+			text-align: center;
+
+		}
+
+		section h1 {color:#2C3135; }
+
+		aside {
+			background-color: #C5DDF0;
+			padding: 1em;
+		}
+
+		picture {
+			box-shadow: 10px 10px 5px #888888;
+		}
+		
+		.imagenes{
+			text-align: center;
+		}
+
+		.logo_minion{
+
+		}
+		.contenedor_svg{
+			text-align: center;
+		}
+
+		.imagen_svg{
+
+			height:    100%;
+			max-width: 400px;
+		}
+
+		
+
+	/* Estilos de fuente */	
+		.formulacion{
+			font-family: "Roboto";
+			
+		}
+	/*Estilos Logo*/
+
+		.formulacion img{
+			max-height: 5em;
+			float: left;
+		}
+
+	/*Estilos Iframe*/
+		.contenedor-responsive{
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+			
+		}
+
+		.mi-iframe{
+			position: absolute;
+		  	top: 5%;
+		  	left: 5%;
+		 	width: 90%;
+		  	height: 90%;
+			box-shadow: 10px 10px 5px #888888;
+		}
+		
+	</style>
+
+</head>
+
+<body>
+
+	<header class="cabecera">
+		<h1>Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</h1>
+		<h2>Modulo 2 <small>- Entrega P2P opcional 3.</small></h2>
+	</header>
+
+	<section class="formulacion">
+		<img src="minions/logo_minion.png">
+		<h1>Formulación del ejercicio:</h1>
+		
+		<p>Realiza una página que utilice imágenes responsive con la etiqueta picture, que contenga un vídeo de YouTube y archivos de imagen vectorial SVG.</p>
+	</section>
+	<section class="imagenes">
+		<h1>Imágenes Responsive:</h1>
+		
+		<picture>
+			
+			<source
+			  media="(min-width: 1100px)"
+			  srcset="minions/minions1.jpg">
+			<source
+			  media="(min-width: 1000px)"
+			  srcset="minions/minions2.jpeg">
+			<source
+			  media="(min-width: 800px)"
+			  srcset="minions/minions3.jpg">
+			<source
+			  media="(min-width: 600px)"
+			  srcset="minions/minions4.jpg">
+			<source
+			  media="(min-width: 450px)"
+			  srcset="minions/minions5.jpeg">
+			<source
+			  media="(min-width: 330px)"
+			  srcset="minions/minions6.jpeg">
+			<img
+			  src="minions/minions6.jpeg"
+			  alt="Imagen por defecto de un minion">
+
+		</picture>
+
+		
+	</section>
+
+	<section>
+		<h1>Iframe de Youtube responsive</h1>
+		<div class="contenedor-responsive">
+			<iframe class="mi-iframe" width="560" height="315" src="https://www.youtube.com/embed/D_hxHlORX1I" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</section>
+
+	<section >
+		<h1>Minion en Vectorial (SVG)</h1>
+		<div class="contenedor_svg" >
+			<img class="imagen_svg" src="minions/minion.svg">
+
+		</div>
+	</section>
+
+	<aside>
+
+	</aside>
+
+	<footer>
+		<p>(c) 2016 - Lish@ - Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</p>
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,106 @@
+     body {
+        padding: 0;
+        margin: 0;
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6) 2%, rgba(0, 0, 0, 0.6) 98%), url(mates.jpg);
+        background-image: -o-linear-gradient(rgba(0, 0, 0, 0.6) 2%, rgba(0, 0, 0, 0.6) 98%), url(mates.jpg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6) 2%, rgba(0, 0, 0, 0.6) 98%), url(mates.jpg);
+        background-position: 0px 0px, 50% 50%;
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+        background-attachment: scroll, fixed;
+     }  
+
+      #igual {     
+      background-color: #FF4A00;
+  
+    }
+
+    .msj {
+      background-color: rgba(255, 74, 0, 0.6);
+      width: 100%; 
+      height: auto;    
+      border-style: solid;
+      border-width: 2px;
+      border-color: rgb(100,100,100);
+      border-radius: 0px 0px 10px 10px;
+
+    }
+
+    .msj p{
+      padding: 1em;
+    }
+
+    .panel-footer{
+
+      text-align: center;
+      background-color: #2C3135;
+      color: #fff;
+    }
+
+    .calculadora{
+      background-color: rgba(102, 102, 102, 0.64);
+      margin-bottom: 3em;
+      /*background-color: #FFED87;*/
+      padding: 1em;
+      /*box-shadow: 10px 10px 5px #888888;*/
+      text-align: center;
+      color: #CCCCCC;
+      border-radius: 10px; 
+
+    }
+
+    .calculadora input{
+      font-size: 3em;
+      min-width: 100%;
+      text-align: center;
+    }
+
+    .calculadora div input{
+      font-size: 250%;
+      font-weight: bold;
+      width: 100%; 
+      height: 3em;    
+      border-style: solid;
+      border-width: 2px;
+      border-color: rgb(100,100,100);
+      border-radius: 10px 10px 0px 0px;
+      color: #333;
+    }
+   
+    .calculadora .button {
+      font-size: 4em;
+      background-color: rgba(215, 215, 215, 0.6);
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgb(100,100,100);
+      /*min-width: 2em;
+      min-height: 2em;
+      margin: 0.08em;*/
+      border-radius: 0px; 
+      color: #333;
+      
+    }
+
+    .calculadora .button:hover{
+      background-color: rgba(106, 106, 106, 0.60);
+      color: #DADADA;
+      /*box-shadow: 5px 5px 3px #222222 ;*/
+    }
+
+    .calculadora .button:active {
+      box-shadow: 5px 5px 3px #333333 inset;
+      
+     }
+
+    .botonera{
+      min-width: 90%;
+     
+    }
+
+    .row {
+      margin: 0;
+    }
+
+
+
+    

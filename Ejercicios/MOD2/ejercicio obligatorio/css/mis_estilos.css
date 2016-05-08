@@ -1,0 +1,164 @@
+
+/* Estilos básicos de la página */
+
+		body{
+			margin:0px;
+			padding: 0px;
+		}
+
+		header{
+			padding: 3em 0em;
+			text-align: center;
+			background-color: #2C3135;
+			color: #fff;
+
+		}
+
+		header h2{
+			color: #CCCCCC;
+		}
+
+		footer{
+			padding: 3em 0em;
+			text-align: center;
+			background-color: #2C3135;
+			color: #fff;
+		}
+
+	/* Estilos de contenedor flex */	
+		.contenedor-flex{
+			display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+			text-align: center;
+		    -webkit-flex-wrap: wrap;
+		    flex-flow:row wrap;
+		    justify-content:center;
+		    background-color: #ffffff;
+
+		}
+	
+	/*Estilos del archivo svg*/
+		.contenedor_svg{
+			text-align: center;	
+			padding-top: 5px;
+		}
+
+		.imagen_svg{
+			max-height: 400px;
+		}
+
+	/* Estilos de fuente */	
+		.roboto{
+			font-family: "Roboto", "Arial";
+			/*font-size: 1.5em; */
+		}
+
+		.indy{
+			font-family: "Indie Flower";
+			/*font-size: 1.5em; */
+
+		}
+
+		.coming_soon{
+			font-family: "Coming Soon";
+		}
+
+		.open_source{
+			background-color: #C13832;
+			font-family: 'Coming Soon', cursive;
+			color:#fff;
+			
+		}
+
+		
+		.panel{
+			padding: 20px;
+			margin: 25px;
+			background-color: #FBFFBA ;
+			background-blend-mode: color-dodge;
+			box-shadow: 10px 10px 5px #888888;
+			border-radius: 15px;
+			color:#2C3135;
+
+		}
+
+		.panel ol{
+			text-align: left;
+		}
+
+		.centrado{
+			text-align: center;
+		}
+
+		.tux{
+			height: 100px;
+		}
+
+		.tux:hover{
+			height: 200px;
+		}
+
+		.contenedor-tux {
+			display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+			text-align: center;
+		    -webkit-flex-wrap: wrap;
+		    flex-flow:row wrap;
+		    justify-content:center;
+
+			background: #C13832; /* For browsers that do not support gradients */
+		    background: -webkit-linear-gradient(#C13832, #ffffff); /* For Safari 5.1 to 6.0 */
+		    background: -o-linear-gradient(#C13832, #ffffff); /* For Opera 11.1 to 12.0 */
+		    background: -moz-linear-gradient(#C13832, #ffffff); /* For Firefox 3.6 to 15 */
+		    background: linear-gradient(#C13832, #ffffff); /* Standard syntax */
+		}
+
+		.contenedor-tux img{
+			height:200px;
+			padding:5px;
+		}
+
+		.contenedor-tux img:hover{
+			height: 300px;
+		}
+
+		.footer{
+			font-size: 0.5em;
+		}
+
+		/*Estilos Iframe*/
+
+		.mi-iframe{
+			position: absolute;
+		  	top: 5%;
+		  	left: 5%;
+		 	width: 90%;
+		  	height: 90%;
+		  	box-shadow: 10px 10px 5px #888888;
+
+		}
+		.video{
+
+			width: 100%;
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+			border-radius: 15px;
+			
+		}
+
+		.contenedor_video{
+			margin: 3em;
+			background-image: ;
+			padding: 1em;
+			text-align: center;
+
+		}
+				
+		

@@ -1,0 +1,44 @@
+     body {
+        padding: 0;
+        margin: 0;
+        background-color: #ffffff;
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 0%), url(music.jpg);
+        background-image: -o-linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 0%), url(music.jpg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 0%), url(music.jpg);
+        background-position: 0px 0px, 50% 50%;
+       
+        background-size: auto, cover;
+        background-repeat: repeat, no-repeat;
+        background-attachment: scroll, fixed;
+     }              
+
+     header{
+      margin-top: 2em;
+      padding: 3em 0em;
+      text-align: center;
+      background-color: rgba(102, 102, 102, 0.64);
+      color: #fff;
+    }
+
+    header:hover{
+      background-color: rgba(66, 66, 66, 0.80);
+      border-radius: 20px;
+    }
+
+    header h2{
+      color: #CCCCCC;
+       text-shadow: 2px 2px #000000;
+    }
+
+    footer{
+      padding: 1em 0em;      
+      text-align: center;
+      background-color: #2C3135;
+      color: #fff;
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+
+    }
+
+    

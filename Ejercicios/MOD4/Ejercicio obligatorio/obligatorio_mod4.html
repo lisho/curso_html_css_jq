@@ -1,0 +1,134 @@
+<!DOCTYPE html><html>
+<head>
+<!-- 
+    ***************************************
+    * Trabajo realizado con Sumblime Text *
+    * por Lish@                           *
+    * desde mi Manjaro-Linux              *
+    ***************************************
+-->
+  <title>Calculadora</title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    header{
+      padding: 3em 0em;
+      text-align: center;
+      background-color: #2C3135;
+      color: #fff;
+    }
+
+    header h2{
+      color: #CCCCCC;
+    }
+
+    section{
+      margin: 3em;
+      background-color: #FFED87;
+      padding: 1em;
+      box-shadow: 10px 10px 5px #888888;
+      text-align: center;
+    }
+
+    footer{
+      padding: 3em 0em;
+      text-align: center;
+      background-color: #2C3135;
+      color: #fff;
+    }
+
+    .calculadora p, input{
+      font-size: 1.5em;
+      min-width: 90%;
+      text-align: center;
+    }
+   
+    .calculadora button {
+      font-size: 3em;
+      min-width: 2em;
+      min-height: 2em;
+      margin: 0.08em;
+
+
+    }
+
+    #igual{     
+      width: 80%;
+    }
+    
+  </style>
+
+  <script type="text/javascript">
+  var num, acc = 0, op = "";
+
+// OPERACIONES UNITARIAS
+  function mas()          { acc = num.value;  op = "+"; }
+  function menos()        { acc = num.value;  op = "-"; }
+  function multiplicar()  { acc = num.value;  op = "*"; }
+  function dividir()      { acc = num.value;  op = "/"; }
+  function elevado()      { acc = num.value;  op = "^"; }
+
+// OPERACIONES BINARIAS
+  function cuadrado()     { num.value=num.value*num.value; }
+  function inverso()      { num.value=1/num.value; }
+  function raiz()         { num.value=Math.sqrt(num.value); }
+  function parte_entera() { if (num.value>0) { num.value=Math.floor(num.value)}
+                            else {num.value=-Math.ceil(num.value)}
+                          }
+                            
+  function calcular() {
+    if (op === "+") {num.value = (+acc + +num.value)}
+    if (op === "-") {num.value = (+acc - +num.value)}
+    if (op === "*") {num.value = (+acc * +num.value)}
+    if (op === "/") {num.value = (+acc / +num.value)}
+    if (op === "^") {num.value = (Math.pow(+acc, +num.value));}
+  }
+
+  function inic ()   {num = document.getElementById("num");}
+  function vaciar () {num.value = "";}  
+
+  </script>
+
+</head>
+
+<body onLoad="inic()">
+  
+  <header class="cabecera">
+    <h1>Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</h1>
+    <h2>Modulo 4 <small>- Entrega P2P Obligatoria 4.</small></h2>
+  </header>
+  
+  <section>
+    <h1 id="h1">Buenos días, bienvenido a la calculadora de</h1>
+    <h1><small>Luis González Gómez</small></h1>
+   
+  </section> 
+
+  <section class="calculadora"> 
+
+    <p>Número:</p>
+    <input type="" size="16" id="num" onClick="vaciar()">
+    <p></p>
+    <button onClick="mas()">+</button>
+    <button onClick="menos()">-</button>
+    <button onClick="multiplicar()">*</button>
+    <button onClick="dividir()">/</button>
+    <button onClick="elevado()">x<sup>y</sup></button>
+    <p></p>
+    <button onClick="calcular()" id="igual">=</button>
+    <p></p>
+    <button onclick="cuadrado()">x<sup>2</sup></button>
+    <button onclick="inverso()">1/x</sup></button>
+    <button onclick="raiz()">√x</sup></button>
+    <button onclick="parte_entera()">Entero</sup></button>
+    <p></p>
+
+
+  </section>
+
+  <footer>
+    <p>(c) 2016 - Lish@ - Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</p>
+  </footer>
+ 
+</body>
+</html>
+

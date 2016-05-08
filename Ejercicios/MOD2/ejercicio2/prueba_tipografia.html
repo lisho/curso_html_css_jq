@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Prueba de la tipografía </title>
+	<!-- Enlace externo a la fuente Roboto -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!-- Enlace local al css que contiene los @font-face de la fuenete Fira-->
+	
+	<style type="text/css">
+
+	/* Estilos básicos de la página */
+		
+		
+		header{
+			padding: 3em 0em;
+			text-align: center;
+			background-color: #2C3135;
+			color: #fff;
+		}
+
+		header h2{
+			color: #CCCCCC;
+		}
+
+		footer{
+			padding: 3em 0em;
+			text-align: center;
+			background-color: #2C3135;
+			color: #fff;
+		}
+		
+		section{
+			margin: 3em;
+			background-color: #C3C3C3;
+			padding: 1em;
+			box-shadow: 10px 10px 5px #888888;
+		}
+
+		section h1 {color:#2C3135; }
+
+		aside {
+			background-color: #C5DDF0;
+			padding: 1em;
+		}
+
+	/* Estilos de las fuentes */	
+
+		@font-face{
+		    font-family: 'Fira Sans';
+		    src: url('FiraSans-Regular.eot');
+		    src: url('FiraSans-Regular.eot') format('embedded-opentype'),
+		         url('FiraSans-Regular.woff2') format('woff2'),
+		         url('FiraSans-Regular.woff') format('woff'),
+		         url('FiraSans-Regular.ttf') format('truetype');
+		    font-weight: 400;
+		    font-style: normal;
+		}
+
+		.roboto{
+			font-family: "Roboto";
+			font-size: 1.5em; 
+		}
+
+		.fira{
+			font-family: "Fira Sans";
+			font-size: 1.5em; 
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<header class="cabecera">
+		<h1>Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</h1>
+		<h2>Modulo 2 <small>- Entrega P2P opcional 2.</small></h2>
+	</header>
+
+
+	<section class="roboto">
+		<h1>Prueba de la tipografía "Roboto":</h1>
+		<p ><em>Lorem ipsum </em>dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui <strong>officia deserunt mollit anim id est laborum</strong>.</p>
+
+		<a href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto">Enlace de referencia.</a>
+	</section>
+
+	<section class="fira">
+		<h1>Prueba de la tipografía "Fira Sans":</h1>
+		<p ><em>Lorem ipsum </em>dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui <strong>officia deserunt mollit anim id est laborum</strong>.</p>
+
+		<a href="https://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/">Enlace de referencia.</a>
+	</section>
+
+	<aside>
+
+	</aside>
+
+	<footer>
+		<p>(c) 2016 - Lish@ - Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</p>
+	</footer>
+
+</body>
+</html>

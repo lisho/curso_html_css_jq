@@ -1,0 +1,106 @@
+<!DOCTYPE html><html>
+<head>
+  <title>Date</title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    header{
+      padding: 3em 0em;
+      text-align: center;
+      background-color: #2C3135;
+      color: #fff;
+    }
+
+    header h2{
+      color: #CCCCCC;
+    }
+
+    section{
+      margin: 3em;
+      background-color: #FFED87;
+      padding: 1em;
+      box-shadow: 10px 10px 5px #888888;
+    }
+
+    footer{
+      padding: 3em 0em;
+      text-align: center;
+      background-color: #2C3135;
+      color: #fff;
+    }
+
+    #propiedades strong {
+      color: #2C3135;
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <header class="cabecera">
+    <h1>Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</h1>
+    <h2>Modulo 3 <small>- Entrega P2P Obligatoria 3.</small></h2>
+  </header>
+  
+  <section>
+    <h1 id="h1"></h1>
+    <h1><small>Entrega: Luis González Gómez</small></h1>
+    <h2 id="h2">La fecha y la hora son:</h2>
+    <div id="fecha"></div>
+  </section> 
+
+  <section> 
+
+    <h1>Resultados del Ejercicio:</h1>
+    <hr><br><br>    
+    
+    <!-- Este es el DIV donde pide el ejercicio que se muestren los resultados -->
+    <div id="propiedades"></div>
+
+  </section>
+
+  <footer>
+    <p>(c) 2016 - Lish@ - Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (5.ª ed.)</p>
+  </footer>
+
+ <script type="text/javascript">
+  var fecha = new Date();
+  var msj;
+
+  // Nuevas variables
+  var h2;
+  var h1;
+  var loc_href;
+  var loc;
+  var screen_w;
+  var screen_h;
+
+  if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
+  else if (fecha.getHours() < 12) { msj = "Buenos días";}
+  else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+  else                                          { msj = "Buenas noches";}
+
+  document.getElementById("h1").innerHTML    = msj;
+  document.getElementById("fecha").innerHTML = fecha;
+
+  // Cargamos en las variables los valores que nos pide el ejercicio
+  
+  h2       = document.getElementById("h2").innerHTML;
+  h1       = document.getElementById("h1").outerHTML;
+  loc_href = location.href ;
+  loc      = location;
+  screen_w = screen.width;
+  screen_h = screen.height;
+
+  //mostramos la información en el <div> con el id="propiedades"
+  
+  document.getElementById("propiedades").innerHTML = 
+          "<p>--> Contenido de innerHTML de elemento identificado por id='h2': <strong>"+h1+"</strong></p>"+
+          "<p>--> Contenido de outerHTML de elemento identificado por id='h1': <strong>"+h2+"</strong></p>"+
+          "<p>--> Contenido de de la propiedad global 'location.href': <strong>"+loc_href+"</strong></p>"+
+          "<p>--> Contenido de de la propiedad global 'location': <strong>"+loc+"</strong></p>"+
+          "<p>--> Contenido de de las propiedad 'screen.width': <strong>"+screen_w+"</strong></p>"+
+          "<p>--> Contenido de de las propiedad 'screen.height': <strong>"+screen_h+"</strong></p>";
+</script>
+</body>
+</html>
+
