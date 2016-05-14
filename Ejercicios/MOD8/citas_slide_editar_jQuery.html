@@ -8,106 +8,139 @@
 <script type="text/javascript" src="javascript/galeria.js" ></script>
 
 <script>
-var t, actual;
+
+/**************************************************************
+**** Agradezco a Gerarrdo Miediavilla                       ***
+**** (https://miriadax.net/web/gmediabilla/~/11796/perfil)  ***
+**** su aportación en el foro que me ha ayudado a entender  ***
+**** y realizar este ejercicio.                             ***
+***************************************************************
+*/
+
+
+var t, actual, resetea;
+var resetea = 0;
 
 function select(i){
    actual = i;
-   var galeria1 = JSON.parse(localStorage.str1);
+
   $("nav a")
     .removeClass("on off")
     .addClass(function(j){return(j===i)?"on":"off";});
-
-  $("#persona").html(galeria1[i].persona);
-  $("#frase").html(galeria1[i].frase);
-  $("#foto").attr("src", galeria1[i].foto);
-
+    if (galeria_trabajo.length !== 0) {
+  $("#persona").html(galeria_trabajo[i].persona);
+  $("#frase").html(galeria_trabajo[i].frase);
+  $("#foto").attr("src", galeria_trabajo[i].foto);
   clearTimeout(t);
-  t = setTimeout( function(){select((i + 1) % galeria.length);}, 2000);
+   t = setTimeout( function(){select((i + 1) % galeria_trabajo.length);}, 3000);}
+   else {
+    alert("No hay mas citas que mostrar, el programa reiniciará la base de datos de citas");
+  localStorage.galeria_guardada = galeria_original;
+  galeria_trabajo = JSON.parse(localStorage.galeria_guardada);
+  generar_selector();
+    select(0);
+    resetea=0;
+   }
 }
 
+/* esta funcion es una factorizacion de la funcion del ejemplo anterior para que puede ser llamada desde cualquier
+ lugar donde se necesite generar el selector,  y genera el selector inferior*/ 
 function generar_selector(){ // regenera la botonera
   var selector = $("#selector");
-  var galeria1 = JSON.parse(localStorage.str1);
 
   selector.html("");
   
-  galeria1.forEach(function(elem,i) {
+  galeria_trabajo.forEach(function(elem,i) {
     selector.append("<li><a onClick='select("+i+")'></a></li>");
   });
 }
 
 $(function (){
-
-	localStorage.str1 = localStorage.str1 || JSON.parse(galeria);
-	var galeria1 = JSON.parse(localStorage.str1);
-	//var galeria = localStorage.str1;
-
-
+  /* Convertimos el Array Galeria (donde están las citas) en un String para guardarlo en el localStorage */
+        galeria_original = JSON.stringify(galeria);
+    /* Creamos el localStorage,  si no existe lo inicializamos con la variable citas_orginal que corresponde al string del array de citas, 
+       si ya existe el localStorage se inicializa con el mismo valor */
+        localStorage.galeria_guardada = localStorage.galeria_guardada || galeria_original;
+    /*Convertimos el contenido del localStorage (es un String) a un array y se lo asignamos a la variable citas_ para poder tabajar sobre este. */
+        galeria_trabajo = JSON.parse(localStorage.galeria_guardada);
 
   generar_selector();
 
   $("#editar").on("click", function(){
     clearTimeout(t);
- 
-   //galeria = JSON.stringify(localStorage.str1);
-    
-    $("#persona_d").html(galeria[actual].persona);
-    $("#frase_d").html(galeria[actual].frase);
-    $("#foto_d").html(galeria[actual].foto);
-
+    if (resetea === 0){ 
+    $("#persona_d").html(galeria_trabajo[actual].persona);
+    $("#frase_d").html(galeria_trabajo[actual].frase);
+    $("#foto_d").html(galeria_trabajo[actual].foto);
     $("#datos").css("display", "block");
-
-    localStorage.str1 = JSON.stringify(galeria);
-
-
+    resetea=1;
+    }
+  /* si la edicion esta desplegada, se puede cerrar con el mismo boton de edicion */
+    else {
+      $("#datos").css("display", "none");
+      generar_selector();
+      select(actual);
+      resetea=0;} ;
   })
 
-	$("#nuevo").on("click", function(){
-		$("#datos").css("display", "none");
-	    //galeria = localStorage.str1;
+/* guarda cita editada */
+  $("#guardar").on("click", function(){ 
+    galeria_trabajo[actual].persona = $("#persona_d").html();
+      galeria_trabajo[actual].frase = $("#frase_d").html();
+      galeria_trabajo[actual].foto = $("#foto_d").html();      
+      generar_selector();
+      select(actual);
+    $("#datos").css("display", "none");
+  /* convertimos el array galeria_trabajo, que son las citas modificadas, a un string y lo almacenamos 
+  en el localStore */
+   localStorage.galeria_guardada = JSON.stringify(galeria_trabajo);
+     resetea=0;
+  })
 
-	    actual = galeria.push({
-	       persona:$("#persona_d").html(),
-	       frase:$("#frase_d").html(),
-	       foto:$("#foto_d").html()
-	    }) - 1;
+/* crea nueva cita */
+  $("#nuevo").on("click", function(){
+    $("#datos").css("display", "none");
+    actual = galeria_trabajo.push({
+       persona:$("#persona_d").html(),
+       frase:$("#frase_d").html(),
+       foto:$("#foto_d").html()
+    }) - 1;
+    generar_selector();
+    select(actual);
+    $("#datos").css("display", "none");
+    /* convertimos el array galeria_trabajo, que son las citas modificadas, a un string y lo almacenamos 
+    en el localStore */
+  localStorage.galeria_guardada = JSON.stringify(galeria_trabajo);
+    resetea=0;
+  })
 
-		localStorage.str1 = JSON.stringify(galeria);
-	    generar_selector();
+/* borra cita actual */
+  $("#borrar").on("click", function(){
+    galeria_trabajo.splice (actual,1)
+    generar_selector();
+    select(0);
+   $("#datos").css("display", "none");
+    /* convertimos el array galeria_trabajo, que son las citas modificadas, a un string y lo almacenamos 
+    en el localStore */
+  localStorage.galeria_guardada = JSON.stringify(galeria_trabajo);
+    resetea=0;
+    })
 
-	    select(actual);
-		})
+/* reiniciamos el localStore con la galeria original de citas*/
+  $("#reiniciar").on("click", function(){
+  if (confirm("¿Desea vover la baser de datos a su situación inicial?")){
+  localStorage.galeria_guardada = galeria_original;
+  galeria_trabajo = JSON.parse(localStorage.galeria_guardada);
+  generar_selector();
+    select(0);
+    $("#datos").css("display", "none");
+    resetea=0;}
+    })
 
-	$('#guardar').on('click', function() {
-	  $("#datos").css("display", "none");
-	//galeria = localStorage.str1;
-
-	  galeria[actual].persona =$("#persona_d").html();
-	  galeria[actual].frase = $("#frase_d").html();
-	  galeria[actual].foto = $("#foto_d").html();
-
-	  localStorage.str1 = JSON.stringify(galeria);
-
-	  generar_selector();
-	  select(actual);
-	});
-
-	$('#borrar').on('click', function() {
-	  $("#datos").css("display", "none");
-	//galeria = localStorage.str1;
-
-	  galeria.splice(actual,1);
-
-	  localStorage.str1 = JSON.stringify(galeria);
-	  
-	  generar_selector();
-	  select(actual);
-	});
-
-
+  
   select(0);
-
 });
+
 </script>
 </head>
 
@@ -135,6 +168,7 @@ $(function (){
         <li><img src="images/edit-black.svg" alt="" id="guardar"/></li>
         <li><img src="images/plus-black.svg" alt="" id="nuevo"/></li>
         <li><img src="images/delete-black.svg" alt="" id="borrar"/></li>
+        <li><button type="button" id="reiniciar">Resetear</button> </li>
       </ul>
     </div>
   </section>
