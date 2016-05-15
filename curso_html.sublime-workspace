@@ -487,6 +487,13 @@
 	},
 	"buffers":
 	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -538,8 +545,8 @@
 	[
 		"/home/lisho/Descargas/Cursos/curso HTML",
 		"/home/lisho/Descargas/Cursos/curso HTML/Ejercicios",
-		"/home/lisho/Descargas/Cursos/curso HTML/Ejercicios/MOD8",
-		"/home/lisho/Descargas/Cursos/curso HTML/Ejercicios/MOD8/javascript"
+		"/home/lisho/Descargas/Cursos/curso HTML/Ejercicios/MOD8/javascript",
+		"/home/lisho/Descargas/Cursos/curso HTML/mod_09/mod_09"
 	],
 	"file_history":
 	[
@@ -674,7 +681,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -688,6 +695,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"replegar",
 			"PolarArea",
 			"endif",
 			"danger",
@@ -745,6 +753,41 @@
 	"groups":
 	[
 		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/lisho/Descargas/Cursos/curso HTML",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
 			"sheets":
 			[
 			]
@@ -767,11 +810,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.969733656174,
 			1.0
 		],
 		"rows":
